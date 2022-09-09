@@ -1,0 +1,49 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbar {
+    border: 5px solid #000;
+    background-color: #212121;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    justify-content: space-around;
+
+}
+
+.flex-container {
+    display: flex;
+}
+
+.btn {
+    border: 4px solid black;
+    background-color: white;
+    text-align: center;
+    font-size: 35px;
+    margin: 20px;
+    padding: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+#papel {
+    border-color: green;
+    color: green;
+}
+
+#piedra {
+    border-color: red;
+    color: red;
+}
+
+#tijera {
+    border-color: dodgerblue;
+    color: dodgerblue;
+}
+
+#pc {
+    border-color: grey;
+    color: grey;
+}
