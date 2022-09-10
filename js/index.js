@@ -6,6 +6,8 @@ const btnPc = document.getElementById("pc");
 const userChoice = document.getElementById("user-choice");
 const pcChoice = document.getElementById("pc-choice");
 
+const banner = document.getElementById("banner");
+
 
 /*   CHANGE DE BUTTON COLOR   */
 
@@ -47,18 +49,6 @@ btnTijera.addEventListener("mouseout", () => {
     btnTijera.style.color = "dodgerblue";
 })
 
-//Mouse Hover PC
-btnPc.addEventListener("mouseover", () => {
-    btnPc.style.backgroundColor = "grey";
-    btnPc.style.color = "white";
-})
-
-btnPc.addEventListener("mouseout", () => {
-    btnPc.style.backgroundColor = "white";
-    btnPc.style.border = "4px solid grey";
-    btnPc.style.color = "grey";
-})
-
 
 
 /*   USER CHOICE   */
@@ -81,19 +71,42 @@ function randomInteger (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-/* PC CHOICE */
 
-btnPc.addEventListener("click", () => {
-    const num = randomInteger(1, 3);
+/* GAME LOGIC FUNCTION */
+
+function game(yourChoice){
+    let pc = randomInteger(1, 3);
+    const tocar = "<h2>TOCA PARA CONTINUAR JUGANDO</h2>"
     
-    if (num == 1) {
-        pcChoice.innerHTML = "Piedra"
+    if (pc == 1) {
+        pc = "PIEDRA"
+        pcChoice.innerHTML = pc;
 
-    } else if (num == 2) {
-        pcChoice.innerHTML = "Papel"
+    } else if (pc == 2) {
+        pc = "PAPEL"
+        pcChoice.innerHTML = pc;
         
-    } else if (num == 3) {
-        pcChoice.innerHTML = "Tijera"
+    } else if (pc == 3) {
+        pc = "TIJERA"
+        pcChoice.innerHTML = pc;
 
     }
-});
+
+    if (yourChoice == pc) {
+        console.log("EMPATE");
+        banner.innerHTML = "<h1>EMPATE</h1>" + tocar;
+
+    } else if ((yourChoice == "PIEDRA" && pc == "TIJERA") || (yourChoice == "PAPEL" && pc == "PIEDRA") || (yourChoice == "TIJERA" && pc == "PAPEL")) {
+        console.log("HAS GANADO!!")
+        banner.innerHTML = "<h1>HAS GANADOOOO!!</h1>" + tocar;
+    } else {
+        console.log("HAS PERDIDO :(")
+        banner.innerHTML = "<h1>PERDISTE :(</h1>" + tocar;
+    }
+
+    banner.style.display = ""
+}
+
+function hideBanner(){
+    banner.style.display = "none";
+}

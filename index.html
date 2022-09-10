@@ -10,14 +10,29 @@
 <body>
 
     <nav class="flex-container" id="navbar">
-        <input type="button" class="btn" id="piedra" value="PIEDRA">
-        <input type="button" class="btn" id="papel" value="PAPEL">
-        <input type="button" class="btn" id="tijera" value="TIJERA">
-        <input type="button" class="btn" id="pc" value="PC">
+        <input type="button" class="btn" id="piedra" onclick="game('PIEDRA')" value="PIEDRA">
+        <input type="button" class="btn" id="papel" onclick="game('PAPEL')" value="PAPEL">
+        <input type="button" class="btn" id="tijera" onclick="game('TIJERA')" value="TIJERA">
     </nav>
 
-    <h1 id="user-choice">AQUI IRA TU ELECCION</h1>
-    <h1 id="pc-choice">AQUI IRA LA ELECCION DEL ORDENADOR</h1>
+    <div class="flex-container" id="container">
+        <div class="items">
+            <h1 id="user-choice">AQUI IRA TU ELECCION</h1>
+            
+        </div>
+
+        <div class="items">
+            <h1 id="vs">VS</h1>
+        </div>
+
+        <div class="items">
+            <h1 id="pc-choice">AQUI IRA LA ELECCION DEL ORDENADOR</h1>
+            
+        </div>
+    </div>
+
+    <div id="banner" class="flex-container" style="display: none;" onclick="hideBanner();">
+    </div>
 
     <script src="js/index.js"></script>
 </body>
